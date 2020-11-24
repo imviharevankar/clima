@@ -27,7 +27,11 @@ window.addEventListener("load", () => {
 
             const cors = "https://cors-anywhere.herokuapp.com/"
 
+<<<<<<< HEAD
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
+=======
+            const url = `https:/api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
+>>>>>>> 8fcf81f0de63d0c0ca89d6477cf6e7b61ded0b1e
 
             async function fetchWeather() {
                 const response = await fetch(url);
