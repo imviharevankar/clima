@@ -25,13 +25,16 @@ window.addEventListener("load", () => {
             lon = position.coords.longitude;
             lat = position.coords.latitude;
 
-            const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
+            const cors = "https://cors-anywhere.herokuapp.com/"
+
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
 
             async function fetchWeather() {
                 const response = await fetch(url);
                 const data = await response.json();
                 return data;
             }
+
             fetchWeather().then(data => {
 
                 console.log(data);
@@ -67,7 +70,7 @@ window.addEventListener("load", () => {
                     <h5>${date} ${months[month]} ${year}</h5>
                     </div>
                     <div class="icon">
-                    <img src="http://openweathermap.org/img/w/${icon}.png" alt="icon" class="icon">
+                    <img src="https://openweathermap.org/img/w/${icon}.png" alt="icon" class="icon">
                     </div>
                     <div class="more__info">
                     <p>Humidity <span class="fas fa-percent"></span> : ${data.main.humidity} %</p>
@@ -88,7 +91,6 @@ window.addEventListener("load", () => {
             return cities;
         }
         fetchCities().then(cities => {
-            console.log(cities);
 
         });
 
